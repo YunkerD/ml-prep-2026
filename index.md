@@ -23,6 +23,16 @@ Explore my Coursera Plus learning sprint:
 
 ---
 
+## 🛠️ Featured Case Study
+
+Explore how predictive analytics can transform asset management:
+
+- 📄 [AI-Driven Predictive Maintenance](asset-intelligence/asset-ai-case-study.md)  
+  A stakeholder-ready case study aligned with La Trobe MDS subjects `CSE4PM` and `CSE4BIA`.  
+  Includes executive summary, methodology, model insights, and impact analysis.
+
+---
+
 ## 🔗 Live Notebook Previews
 
 Use [nbviewer](https://nbviewer.org/) to preview Jupyter notebooks directly:
