@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ML Prep 2026 Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ML Prep 2026 Portfolio</title>
   <link rel="stylesheet" href="style.css" />
   <style>
     details summary {
@@ -11,11 +11,8 @@
       cursor: pointer;
       margin-top: 1em;
     }
-    details[open] summary::after {
-      content: " ▲";
-    }
-    summary::after {
-      content: " ▼";
+    details {
+      margin-bottom: 1em;
     }
     .icon {
       margin-right: 8px;
@@ -23,46 +20,47 @@
   </style>
 </head>
 <body>
-  <h1>📊 ML Prep 2026 Dashboard</h1>
-  <p>Curated roadmap and portfolio for recommencement of Master of Data Science at La Trobe (Feb 2026)</p>
+  <header>
+    <h1>🚀 ML Prep 2026 Portfolio</h1>
+    <p>Reliability Engineering → Full Stack ML | Academic Rigor + Stakeholder Impact</p>
+  </header>
 
-  <details open>
-    <summary>🧭 Weekly Roadmap</summary>
-    <ul>
-      <li><a href="weekly-roadmap.md">View Weekly Tasks</a></li>
-    </ul>
-  </details>
+  <section>
+    <details open>
+      <summary>📁 Weekly Roadmap</summary>
+      <ul>
+        <li><a href="weekly-roadmap.md">Progress Tracker</a></li>
+        <li><a href="subject-mapping.md">Subject Mapping</a></li>
+      </ul>
+    </details>
 
-  <details>
-    <summary>📚 Subject Mapping</summary>
-    <ul>
-      <li><a href="subject-mapping.md">Academic Alignment</a></li>
-    </ul>
-  </details>
+    <details>
+      <summary>📊 Visual KPIs</summary>
+      <ul>
+        <li><a href="visual-kpis.md">Dashboard Metrics</a></li>
+        <li><a href="maintain-dashboard.md">Version Tracker</a></li>
+      </ul>
+    </details>
 
-  <details>
-    <summary>🧠 ML Case Studies</summary>
-    <ul>
-      <li><a href="anomaly-detector.ipynb">Anomaly Detection Notebook</a></li>
-    </ul>
-  </details>
+    <details>
+      <summary>🧠 ML Case Studies</summary>
+      <ul>
+        <li><a href="ml-case-studies.md">Case Study Tracker</a></li>
+        <li><a href="anomaly-detector.ipynb">Anomaly Detector Notebook</a></li>
+      </ul>
+    </details>
 
-  <details>
-    <summary>🗂️ Previous Works Archive</summary>
-    <ul>
-      <li><a href="archive/index.html">Legacy Projects</a></li>
-    </ul>
-  </details>
-
-  <details>
-    <summary>🎯 Visual KPIs & Dashboards</summary>
-    <ul>
-      <li><a href="dashboard.html">Stakeholder Dashboard</a></li>
-    </ul>
-  </details>
+    <details>
+      <summary>📚 Previous Works Archive</summary>
+      <ul>
+        <li><a href="archive/index.html">Legacy Projects</a></li>
+        <li><a href="archive/previous-works.md">Annotated Archive</a></li>
+      </ul>
+    </details>
+  </section>
 
   <footer>
-    <p>Last updated: September 2025 | Powered by GitHub Pages</p>
+    <p>Built with ❤️ by Daniel Yunker | GitHub Pages | Updated Sep 2025</p>
   </footer>
 </body>
 </html>
