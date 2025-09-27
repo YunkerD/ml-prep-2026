@@ -1,70 +1,81 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ML Prep 2026 – Daniel Yunker</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header>
-    <h1>🧠 ML Prep 2026</h1>
-    <p>Strategic portfolio for recommencing Master of Data Science at La Trobe</p>
-    <nav>
-      <ul>
-        <li><a href="#notebooks">📓 Notebooks</a></li>
-        <li><a href="#case-studies">📊 Case Studies</a></li>
-        <li><a href="#trackers">🗂️ Trackers</a></li>
-        <li><a href="#visuals">🎨 Visuals</a></li>
-        <li><a href="#about">📌 About</a></li>
-      </ul>
-    </nav>
-  </header>
+/* Reset & Base */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
 
-  <section id="notebooks">
-    <h2>📓 Core Notebooks</h2>
-    <ul>
-      <li><a href="notebooks/data-cleaning.md">Data Cleaning & Wrangling</a></li>
-      <li><a href="notebooks/model-benchmarking.md">Model Benchmarking Framework</a></li>
-      <li><a href="notebooks/predictive-maintenance.md">Predictive Maintenance (Asset Intelligence)</a></li>
-    </ul>
-  </section>
+a {
+  color: #007acc;
+  text-decoration: none;
+}
 
-  <section id="case-studies">
-    <h2>📊 Case Studies</h2>
-    <ul>
-      <li><a href="case-studies/fifo-asset-optimization.md">FIFO Asset Optimization</a></li>
-      <li><a href="case-studies/customer-success-ml.md">ML for Customer Success Strategy</a></li>
-    </ul>
-  </section>
+a:hover {
+  text-decoration: underline;
+}
 
-  <section id="trackers">
-    <h2>🗂️ Academic & Workflow Trackers</h2>
-    <ul>
-      <li><a href="trackers/semester-planner.md">Semester Planner (La Trobe 2026)</a></li>
-      <li><a href="trackers/portfolio-roadmap.md">Portfolio Roadmap & Milestones</a></li>
-    </ul>
-  </section>
+/* Header */
+header {
+  background-color: #007acc;
+  color: white;
+  padding: 2rem 1rem;
+  text-align: center;
+}
 
-  <section id="visuals">
-    <h2>🎨 Visuals & Iconography</h2>
-    <ul>
-      <li><a href="visuals/folder-structure.md">Folder Structure & Naming Conventions</a></li>
-      <li><a href="visuals/dashboard-icons.md">Dashboard Icons & Visual Hierarchy</a></li>
-    </ul>
-  </section>
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
 
-  <section id="about">
-    <h2>📌 About This Portfolio</h2>
-    <p>
-      This repository scaffolds Daniel Yunker’s recommencement of the Master of Data Science in Feb 2026.
-      It integrates predictive analytics, asset intelligence, and stakeholder-facing polish for recruiter visibility.
-      Built with academic rigor and workflow optimization in mind.
-    </p>
-  </section>
+header p {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
 
-  <footer>
-    <p>© 2025 Daniel Yunker · <a href="https://github.com/dyunker/ml-prep-2026">GitHub Repo</a></p>
-  </footer>
-</body>
-</html>
+/* Navigation */
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+nav li {
+  font-weight: bold;
+}
+
+/* Sections */
+section {
+  padding: 2rem 1rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #007acc;
+  padding-bottom: 0.3rem;
+}
+
+section ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+section li {
+  margin-bottom: 0.5rem;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #eee;
+  font-size: 0.9rem;
+}
