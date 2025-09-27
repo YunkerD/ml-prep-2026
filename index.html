@@ -6,97 +6,63 @@
   <title>ML Prep 2026 Dashboard</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      margin: 2em;
+    details summary {
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 1em;
     }
-    h1 {
-      font-size: 2em;
-      margin-bottom: 0.5em;
+    details[open] summary::after {
+      content: " ▲";
     }
-    h2 {
-      font-size: 1.2em;
-      margin-top: 1.5em;
-      margin-bottom: 0.3em;
+    summary::after {
+      content: " ▼";
     }
-    .badge {
-      display: inline-block;
-      background-color: #0078D4;
-      color: white;
-      padding: 2px 8px;
-      border-radius: 6px;
-      font-size: 0.8em;
-      margin-left: 8px;
-    }
-    ul {
-      margin-left: 1em;
-    }
-    footer {
-      margin-top: 3em;
-      font-size: 0.9em;
-      color: #666;
+    .icon {
+      margin-right: 8px;
     }
   </style>
 </head>
 <body>
-
-  <!-- 🔷 Header -->
   <h1>📊 ML Prep 2026 Dashboard</h1>
   <p>Curated roadmap and portfolio for recommencement of Master of Data Science at La Trobe (Feb 2026)</p>
 
-  <!-- 🧭 Weekly Roadmap -->
-  <h2>🧭 Weekly Roadmap <span class="badge">Active</span></h2>
-  <ul>
-    <li><a href="weekly-roadmap.md">View Weekly Tasks</a></li>
-  </ul>
+  <details open>
+    <summary>🧭 Weekly Roadmap</summary>
+    <ul>
+      <li><a href="weekly-roadmap.md">View Weekly Tasks</a></li>
+    </ul>
+  </details>
 
-  <!-- 📚 Subject Mapping -->
-  <h2>📚 Subject Mapping <span class="badge">Aligned</span></h2>
-  <ul>
-    <li><a href="subject-mapping.md">Academic Alignment</a></li>
-  </ul>
+  <details>
+    <summary>📚 Subject Mapping</summary>
+    <ul>
+      <li><a href="subject-mapping.md">Academic Alignment</a></li>
+    </ul>
+  </details>
 
-  <!-- 🧠 ML Case Studies -->
-  <h2>🧠 ML Case Studies <span class="badge">Notebook</span></h2>
-  <ul>
-    <li><a href="anomaly-detector.ipynb">Anomaly Detection Notebook</a></li>
-  </ul>
+  <details>
+    <summary>🧠 ML Case Studies</summary>
+    <ul>
+      <li><a href="anomaly-detector.ipynb">Anomaly Detection Notebook</a></li>
+    </ul>
+  </details>
 
-  <!-- 🎯 Visual KPIs & Dashboards -->
-  <h2>🎯 Visual KPIs & Dashboards <span class="badge">Stakeholder</span></h2>
-  <ul>
-    <li><a href="dashboard.html">Stakeholder Dashboard</a></li>
-  </ul>
+  <details>
+    <summary>🎯 Visual KPIs & Dashboards</summary>
+    <ul>
+      <li><a href="dashboard.html">Stakeholder Dashboard</a></li>
+    </ul>
+  </details>
 
-  <!-- 🗂️ Previous Works Archive -->
-  <h2>🗂️ Previous Works Archive <span class="badge">Legacy</span></h2>
-  <ul>
-    <li><a href="legacy-projects/index.html">Legacy Projects</a></li>
-  </ul>
+  <details>
+    <summary>🗂️ Previous Works Archive</summary>
+    <ul>
+      <li><a href="archive/index.html">Legacy Projects</a></li>
+    </ul>
+  </details>
 
-  <!-- 🧠 ML Case Studies Tracker -->
-  <h2>🧠 ML Case Studies Tracker <span class="badge">Tracker</span></h2>
-  <ul>
-    <li><a href="ml-case-studies.md" target="_blank">View ML Case Studies</a></li>
-  </ul>
-
-  <!-- 🎯 Visual KPIs Tracker -->
-  <h2>🎯 Visual KPIs Tracker <span class="badge">Tracker</span></h2>
-  <ul>
-    <li><a href="visual-kpis.md" target="_blank">View Visual Dashboards</a></li>
-  </ul>
-
-  <!-- 📓 Maintenance Log -->
-  <h2>📓 Dashboard Maintenance Log <span class="badge">Changelog</span></h2>
-  <ul>
-    <li><a href="maintain-dashboard.md" target="_blank">View changelog and rationale</a></li>
-  </ul>
-
-  <!-- 🔚 Footer -->
   <footer>
     <p>Last updated: September 2025 | Powered by GitHub Pages</p>
   </footer>
-
 </body>
 </html>
