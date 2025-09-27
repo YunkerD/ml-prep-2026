@@ -1,0 +1,502 @@
+---
+title: "Assessment 3 Report - DRAFT"
+author: "Dan Yunker"
+date: '2022-08-14'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Daniel Yunker
+
+### DATA 7021_ Data Taming and Visualisation 
+### Assessment 3
+### Due Date : 15th August 2022
+### Prepared for: Nischal Shetty
+
+## Executive Summary 
+
+The Melbourne Water Company (MWC) engaged the services of the Generic Data Analysis (GDA) Group to conduct analysis and predictive modeling on the evaporation rate of the Cardinia water reservoir. The MWC provided the Generic Data Analysis Group weather forecast data of the Melbourne region for the past financial year, which was supplied in a.csv format. The GDA group conducted data analysis and modeling, with RStuido used as the primary statistical software platform.
+
+Through a Bivariant analysis, the supplied data was cleaned, resorted, and a new data frame was created. To better understand if any relationships were present within the newly created data frame, a series of histograms and scatter plots were produced. With the completion of the Bivariant analysis enabled the development of a series of “tests” to understand the confidence of correlation between the variables used within the linear model. The “test” models the models underwent a elimination process of reviewing the statistical summaries within the “test” linear models in order to eliminate the models with the least significance. 
+
+The final linear model produced displayed a strong linear correlation between the Response and Predictor variables used within the prediction model. The MWC provided a series of extreme weather scenarios that the final prediction model was applied. The model was successful in identifying the date range where there would be a predicted risk of 78.75% chance of excessive water evaporation across the Cardinia water reservoir, with a 95% confidence level applied. 
+
+## Introduction 
+
+The Melbourne Water Company (WMC) are wanting to investigate the evaporation rates of the Cardinia water reservoir and understand how the local weather changes influence the water evaporation rate of the Cardinia water reservoir. The WMC has engaged the services of ‘The Generic Data Analytics group to provide a detailed analysis and supply water evaporation prediction models based on the analysis.
+
+## Method
+
+The Generic Data Analysis group provided Melbourne’s weather observations, and water evaporation rates, in the form of .csv files from the past finical year. Bivariate analysis of the data was performed using RStuido, a statical software program. The .csv files was read into RStuido using the read.csv() function, which produced the supplied water and evaporation rates for Melbourne during the past financial year.
+
+The MWC has requested for the analysis and modeling to be targeted towards the Minimum and Maximum temperatures, and the relative humidity recorded at 9 am of the past financial year. 
+A new data set was created, which included renaming, filtering, and selecting the relevant variables from the original data set. The transformation was conducted on the initial data set provided by the MWC, which included the renaming of the variables within the original data set, filtering and selecting the appropriate variables required for the analysis, and re-coding of the applicable variables required for the analysis (Appendix.1)
+
+To best understand If any relationships existed between the variables applied within the newly created data frame, a series of histograms and scatter plots were produced to investigate possible correlations bteween variables, and to better understand the data distribution. The below plots (Appendix.2) were created to identify linearity, and if any relationships exists between the Max_Temp and the Rel_Humidity_9am variables.
+
+The first relationship investigated was between the Maximum Temperature and the relevant humidity at 9am, scatter plot 1 was produced which indicated a negative correlation showing a moderate relationship between how the increase in temperature influences relative humidity.
+
+To further understand the data spread, a set of histograms were plotted, which indicated the Max Temperature histogram showing a right skewed, unimodal plot with no obvious outliers (Plot 2). The histogram produced of the Relative Humidity variable, showed a reasonable symmetrical plot, with no visible outliers (Plot 3), with the side-by-side histograms supporting the moderate relationship indicated by the produced scatter plot.
+
+The scatter plot produced to understand the Minimum and Relative temperature at 9am (Plot 4), also showed a negative correlation with most of the data clustered within the center of the plot. Histograms was also plotted for the Minimum temperature (Plot 5) , which indicated an a unimodal, semi symmetrical histogram, with relatively even distribution 
+
+To investigate the relationship between the recorded Temperature at 9am and the Relative Humidity at 9am,a scatter plot and histograms were produced. The scatter plot (Plot 6) showed a negative correlation between the two variables, most of the data clustered around the middle of the plot, around the range of 60-80. The histogram plotted for the Temperature at 9am (Plot 7), showed a unimodal plot with one obvious outlier. The side-by-side histograms, reasonable level of linearity between the two variables (Appendix.3)
+
+The scatter plot created to investigate any relationships between total Sunshine hours and Relative Humidity(Plot 8,9) at 9am, showed limited level of relationship between the total Sunshine hours and Relative Humidity at 9am , with no obvious linear trend within the data (Appendix.4)
+
+Based off the bivariant analysis that was conducted to better understand if any relationships are present between the possible response and predictor variables, allowed for the framework in the initial linear modeling development. The response variables used within the model development included the Temperature at 9am, and the Relative Humidity at 9am , and with the predictor variables that were influential against the amount of evaporation included  were Max Temperature, Minimum Temperature, Temperature at 9am, the logarithmic transformation of the Relative Humidity at 9am, and Sunshine Hours. 
+
+Linear models were created based off the mentioned response and predictor variables, with eight (8) initial models produced.
+The initial linear models underwent analysis to understand the models p-values, F-Statistic , t-value and Pr(.t) values which provides an understanding if any statistically significant within the linear model. This process was repeated, until the model with the highest significant predictors were remaining. The final linear model included Relative Humidity at 9am as the response and the Maximum temperature as the predictor (Appendix. xx)
+
+
+## Results
+
+To gain an increase understanding of the confidence within the final linear model created, a series of plots were produced that allow for the verification of the model assumptions. The four assumption variations performed included,
+
+•	Linearity of the data 
+•	Normality of the residuals 
+•	Homogeneity of residual variables
+•	Independence of residual error 
+
+The Residual vs Fitted plot was used to confirm the linearity of the model assumption, by not showing any present of pattern within the residuals of the plot. The Residual vs Fitted plot, does not indicate any residual patterns and the linear reference is somewhat horizontal and provides confidence in the model assumption.
+
+The Scale-Location plot was created to understand the data spread of the predictor within the model, with the horizontal reference indicating a downward trend indicating some non-constants and a level of heteroscedasticity 
+The Normal-QQ test was conducted to check the normality of the assumption, by understanding the residuals within the model follow a linear rend. The produced Normal-QQ plot, shows a strong linear relationship and allowing for confidence of normality of the model 
+
+In testing the independence of residual error within the model, a Durbin Watson test was conducted to identify if any correlations exist within the model residuals. The produced Durbin Watson test provided strong confidence of the model having no residual correlations, as the teat show a p-value of 0 and the Auto Correlation is less than 0.05, supporting a null hypothesis of the modeling having no correlation of residuals (Appendix.5)
+
+### Predictions
+
+The finalised linear model developed was used to provide evaporation predictions, based off estimated extreme weather conditions that were supplied the MWC. The developed model was applied to four weather scenario’s, and a table produced summarizing the model predictions against each extreme weather scenario (Appendix.6)
+
+Based off the parameter of the evaporation rate od greater than 10mm provided by the MWC, and based off produced model summary table. It would be with a 95% confidence to predict that if the evaporation rate was greater than 10mm, that the most likely day for this to occur would be the 6th of July 2020. With the least likely day for this to occur, with a 95% confidence would be on the 29th of February 2020.
+
+## Conclusion 
+
+The data provided by the MWC was in a relatively tidy format, with minimal cleaning and re-formatting of the data required. The data included weather predictions of Melbourne’s weather patterns, and the MWC requested the development of a prediction model to allow for forecasting how extreme weather events impact the evaporation rate of the Cardinia water reservoir.
+
+A new data frame was created from the supplied data, that incorporated key weather pattern variables, and was used in the development of linear models used for predicting evaporation rates during extreme weather. During the analysis, several linear models were created based on variables that can influence of the water evaporation rate. The confidence of model assumptions was tested through a series of linearity testing and analysing the statistical relationships within the model, resulting in the final model with the strongest correlation between the response and predictor variables selected.
+
+The Generic Data Analysis group was provided a series of extreme weather scenarios that the model final linear model was applied, which provided the MWC with the prediction on the most likely date of when the risk of the evaporation rate is greater than the maximum set point, as well as the date least likely to have any significant impact to the water evaporation rate, at a 95% confidence level.
+
+## Appendix 
+
+
+### Apppendix 1
+
+```{r}
+# Packages loaded
+
+library(tidyverse)
+library(magrittr)
+library(stringr)
+
+# Data loaded 
+
+read.csv(choose.files())
+melbourne_wether <- read.csv(choose.files())
+
+# print output
+
+str(melbourne_wether)
+
+# Understanding current column names 
+
+colnames(melbourne_wether)
+
+# New data frame created 
+  
+new_melbourne_df <- melbourne_wether %>% select(Date, Minimum.temperature..Deg.C.,Maximum.Temperature..Deg.C.,
+                            X9am.Temperature..Deg.C.,X9am.relative.humidity....,
+                            X9am.wind.speed..km.h.,X9am.wind.direction,Sunshine..hours.,
+                            )
+# Printed output 
+
+str(new_melbourne_df)
+
+# Renaming variables 
+
+new_melbourne_df  <- new_melbourne_df %>% rename(Min_Temp = Minimum.temperature..Deg.C.,
+                                 Max_Temp = Maximum.Temperature..Deg.C.,
+                                 Temp_9am = X9am.Temperature..Deg.C.,
+                                 Rel_Humidity_9am = X9am.relative.humidity....,
+                                 Wind_Speed_9am = X9am.wind.speed..km.h.,
+                                 Wind_Direction_9am = X9am.wind.direction,
+                                 Sunshine_Hours = Sunshine..hours.)
+
+# Printed output of renamed variables 
+
+colnames(new_melbourne_df)
+
+# Understanding data types and re-coding 
+
+str(new_melbourne_df)
+
+new_melbourne_df$Date <- as.Date(new_melbourne_df$Date,
+                                 format = "%d/%m/%y")
+new_melbourne_df$Wind_Speed_9am <- as.integer(new_melbourne_df$Wind_Speed_9am)
+
+# New columns added, with day and month, year included 
+
+library(lubridate)
+
+new_melbourne_df <-  new_melbourne_df %>% 
+  mutate(
+    Day = as.Date(new_melbourne_df$Date),
+    Month = as.Date(new_melbourne_df$Date),
+    Year = as.Date(new_melbourne_df$Date)
+  )
+
+# date ranges reformatted 
+
+new_melbourne_df$Month <- format(as.Date(new_melbourne_df$Month), "%m")
+new_melbourne_df$Day <- format(as.Date(new_melbourne_df$Day), "%d")
+new_melbourne_df$Year <- format(as.Date(new_melbourne_df$Year), "%y")
+
+# Printed output
+
+str(new_melbourne_df)
+
+# columns re-arranged 
+
+new_melbourne_df <- new_melbourne_df[, c( "Date", "Year","Month","Day","Max_Temp","Min_Temp","Temp_9am","Rel_Humidity_9am",
+                                          "Wind_Speed_9am","Wind_Direction_9am","Sunshine_Hours")]
+
+# printed output 
+
+str(new_melbourne_df)
+
+# Telling R what are categorical variables 
+
+new_melbourne_df <-
+  new_melbourne_df %>% 
+  mutate(Day = factor(Day),
+         Month = factor(Month),
+         Year = factor(Year))
+
+# printed output
+
+head(new_melbourne_df)
+
+```
+
+### Appendix 2
+```{r}
+library(hrbrthemes)
+library(viridis)
+library(dplyr)
+library(tidyverse)
+
+library(extrafont)
+library(ggplot2)
+
+# Max_Temp - Rel_Humidity_9am relationship plotting 
+
+ggplot(new_melbourne_df, aes(x = Max_Temp, y = Rel_Humidity_9am, colour = Rel_Humidity_9am)) +
+  geom_point(size = 2) +
+  theme_ipsum() +
+  ggtitle("Plot  1: Max Temp vs Relative Humidity Scatter Plot" ) +
+  theme_ipsum() +
+  theme(
+    plot.title = element_text(size = 10))
+  
+# Rel_Humidity_9am histogram
+
+Rel_Hum <- ggplot(new_melbourne_df, aes(x=Rel_Humidity_9am)) +
+  geom_histogram( binwidth=3, fill="light green", color="black", alpha=0.9) +
+  ggtitle("Plot 2: Rel_Humidity_9am Histogram") +
+  theme_ipsum() +
+  theme(
+    plot.title = element_text(size=10))
+Rel_Hum
+
+# Max_Temp Histogram
+
+Rel_Max <- ggplot(new_melbourne_df, aes(x=Max_Temp)) +
+  geom_histogram( binwidth=3, fill="light green ", color="black", alpha=0.9) +
+  ggtitle("Plot 3: Max_Temp Histogram") +
+  theme_ipsum() +
+  theme(
+    plot.title = element_text(size=10))
+Rel_Max
+
+library(gridExtra)
+
+# Histograms combined 
+
+grid.arrange(Rel_Hum, Rel_Max, ncol = 2 )
+
+
+library(gridExtra)
+
+# Histograms combined 
+
+grid.arrange(Rel_Hum, Rel_Max, ncol = 2 ) 
+
+```
+
+### Appendix 3 
+
+```{r}
+# MIN TEMP AND HUMIDITY 
+  
+  ggplot(new_melbourne_df, aes(x = Min_Temp, y = Rel_Humidity_9am, colour = Rel_Humidity_9am)) +
+  geom_point(size = 2) +
+  theme_ipsum() +
+  ggtitle("Plot  4: Min Temp vs Relative Humidity Scatter Plot" ) +
+  theme_ipsum() +
+  theme(
+    plot.title = element_text(size = 10))
+
+# Rel_Humidity_9am histogram
+
+Rel_Hum1 <- ggplot(new_melbourne_df, aes(x=Rel_Humidity_9am)) +
+  geom_histogram( binwidth=3, fill="light green", color="black", alpha=0.9) +
+  ggtitle("Plot 4: Rel_Humidity_9am Histogram") +
+  theme_ipsum() +
+  theme(
+    plot.title = element_text(size=10))
+Rel_Hum
+
+# Min_Temp Histogram
+
+Rel_Min <- ggplot(new_melbourne_df, aes(x=Min_Temp)) +
+  geom_histogram( binwidth=3, fill="light green ", color="black", alpha=0.9) +
+  ggtitle("Plot 5: Min_Temp Histogram") +
+  theme_ipsum() +
+  theme(
+    plot.title = element_text(size=10))
+Rel_Min
+
+# Histograms combined 
+
+grid.arrange(Rel_Hum, Rel_Min, ncol = 2 )
+
+```
+
+### Appendix 4
+
+```{r}
+ # REL HUMIDITY AND 9am TEMP
+  
+  ggplot(new_melbourne_df, aes(x = Temp_9am, y = Rel_Humidity_9am, colour = Rel_Humidity_9am)) +
+  geom_point(size = 2) +
+  theme_ipsum() +
+  ggtitle("Plot 6: Temp 9am vs Relative Humidity Scatter Plot" ) +
+  theme_ipsum() +
+  theme(
+    plot.title = element_text(size = 10))
+
+ggplot(new_melbourne_df, aes(x = Rel_Humidity_9am, y = Temp_9am, colour = Rel_Humidity_9am)) +
+  geom_point(size = 2) +
+  theme_ipsum() +
+  theme_ipsum() +
+  ggtitle("Plot 7: Relative Humidity vs Temp 9am Scatter Plot" ) +
+  theme_ipsum() +
+  theme(
+    plot.title = element_text(size = 10)) +
+  geom_smooth(method = lm, colour = 'red', se = TRUE)
+
+# Rel_Humidity_9am histogram
+
+Rel_Hum1 <- ggplot(new_melbourne_df, aes(x=Rel_Humidity_9am)) +
+  geom_histogram( binwidth=3, fill="light green", color="black", alpha=0.9) +
+  ggtitle("Plot 8: Rel_Humidity_9am Histogram") +
+  theme_ipsum() +
+  theme(
+    plot.title = element_text(size=10))
+Rel_Hum
+
+Rel_Temp_9am <- ggplot(new_melbourne_df, aes(x=Temp_9am)) +
+  geom_histogram( binwidth=3, fill="light green ", color="black", alpha=0.9) +
+  ggtitle("Plot 9: Temp_9am Histogram") +
+  theme_ipsum() +
+  theme(
+    plot.title = element_text(size=10))
+Rel_Temp_9am
+
+# Histograms combined 
+
+grid.arrange(Rel_Hum, Rel_Temp_9am, ncol = 2 )
+
+```
+
+### Appendix 5
+
+```{r}
+
+# plot rel humidity vs sunshine hrs - rel humidity vs wind speed  - rel humidity vs wind direction 
+  
+
+Sun_point <- ggplot(new_melbourne_df, aes(x = Sunshine_Hours, y = Rel_Humidity_9am, colour = Rel_Humidity_9am)) +
+  geom_point(size = 2) +
+  theme_ipsum() +
+  geom_smooth(method = lm, colour = 'red', se = TRUE)
+
+Rel_Hum1 <- ggplot(new_melbourne_df, aes(x=Rel_Humidity_9am)) +
+  geom_histogram( binwidth=3, fill="light green", color="black", alpha=0.9) +
+  ggtitle("Rel_Humidity_9am Histogram") +
+  theme_ipsum() +
+  theme(
+    plot.title = element_text(size=10))
+Rel_Hum
+
+Sun_Hrs <- ggplot(new_melbourne_df, aes(x=Sunshine_Hours)) +
+  geom_histogram( binwidth=3, fill="light green ", color="black", alpha=0.9) +
+  ggtitle("Sunshine Hours ") +
+  theme_ipsum() +
+  theme(
+    plot.title = element_text(size=10))
+Sun_Hrs
+
+Sun_grid <- grid.arrange(Rel_Hum, Sun_Hrs, ncol = 2 )
+
+```
+
+### Appendix 6
+
+```{r}
+# Initial models created, with the final model selected through the described elimination process
+
+# Temp_9am Response 
+
+new_melbourne_df_lm <- lm(Temp_9am ~ Rel_Humidity_9am,data = new_melbourne_df)
+summary(new_melbourne_df_lm)
+
+new_melbourne_df_lm1 <- lm(Temp_9am ~ log(Rel_Humidity_9am),data = new_melbourne_df)
+summary(new_melbourne_df_lm1)
+
+new_melbourne_df_lm2 <- lm(Temp_9am ~ Rel_Humidity_9am + Month, data = new_melbourne_df)
+summary(new_melbourne_df_lm2)
+anova(new_melbourne_df_lm2)
+
+
+# Min_Temp
+
+new_melbourne_df_lm3 <- lm(Rel_Humidity_9am ~ Min_Temp, data = new_melbourne_df)
+summary(new_melbourne_df_lm3)
+
+new_melbourne_df_lm4 <- lm(Temp_9am ~ Min_Temp, data = new_melbourne_df)
+summary(new_melbourne_df_lm4)
+
+new_melbourne_df_lm5 <- lm(Rel_Humidity_9am ~ Min_Temp + Month, data = new_melbourne_df)
+summary(new_melbourne_df_lm5)
+anova(new_melbourne_df_lm5)
+
+# Max Temp 
+
+new_melbourne_df_lm6 <- lm(Rel_Humidity_9am ~ Max_Temp, data = new_melbourne_df)
+summary(new_melbourne_df_lm6)
+
+new_melbourne_df.lm6 <- lm(sqrt(Rel_Humidity_9am) ~ Max_Temp + Month, data = new_melbourne_df)
+summary(new_melbourne_df.lm6)
+anova(new_melbourne_df.lm6)
+
+new_melbourne_df_lm7 <- lm(Temp_9am ~ Max_Temp, data = new_melbourne_df)
+summary(new_melbourne_df_lm7)
+
+new_melbourne_df_lm8 <- lm(Temp_9am ~ Max_Temp + Month, data = new_melbourne_df)
+summary(new_melbourne_df_lm8)
+anova(new_melbourne_df_lm8)
+
+new_melbourne_df_lm8$coefficients
+
+
+
+```
+
+### Appendix 7
+
+```{r}
+
+# Final model selected 
+
+new_melbourne_df_lm6 <- lm(Rel_Humidity_9am ~ Max_Temp, data = new_melbourne_df)
+summary(new_melbourne_df_lm6)
+
+# Predictions 
+  
+# Create new data frames 
+  
+  predit_df1 <- tibble(
+  Day = 29,
+  Month = 02,
+  Year = 2020,
+  Min_Temp = 13.8,
+  Max_Temp = 23.2,
+  Rel_Humidity_9am = 74
+)
+
+pred1 <- predict(new_melbourne_df_lm6, predit_df1, interval = 'confidence')
+pred1
+
+  predit_df2 <- tibble(
+    Day = 25,
+    Month = 12,
+    Year = 2020,
+    Min_Temp = 16.4,
+    Max_Temp = 31.9,
+    Rel_Humidity_9am = 57
+  )
+
+pred2 <-  predict(new_melbourne_df_lm6, predit_df2, interval = 'confidence')
+pred2
+
+
+  predit_df3 <- tibble(
+    Day = 13,
+    Month = 01,
+    Year = 2020,
+    Min_Temp = 26.5,
+    Max_Temp = 44.3,
+    Rel_Humidity_9am = 35
+  )
+
+pred3 <- predict(new_melbourne_df_lm6, predit_df3, interval = 'confidence')
+pred3
+  
+  predit_df4 <- tibble(
+    Day = 06,
+    Month = 07,
+    Year = 2020,
+    Min_Temp = 6.8,
+    Max_Temp = 10.6,
+    Rel_Humidity_9am = 76
+  )
+
+pred4 <- predict(new_melbourne_df_lm6, predit_df4, interval = 'confidence')
+pred4
+
+
+# Model Testing of Assumptions
+  
+plot(new_melbourne_df_lm6, which = 1)
+
+plot(new_melbourne_df_lm6, which = 3)
+
+plot(new_melbourne_df_lm6, which = 2)
+
+plot(new_melbourne_df_lm6, which = 5)
+
+library(car)
+durbinWatsonTest(new_melbourne_df_lm6)  
+
+```
+
+```{r}
+
+library(knitr)
+ 
+predit_tbl <- matrix(c(pred1, pred2, pred3, pred4), ncol = 4 )
+colnames(predit_tbl) <- c('29 Feb 2020 Scneario', ' 25 Dec 2020 Scneario', '13 Jan 2020 Scneario', '6 July 2020 Scneario')
+rownames(predit_tbl) = c('Fit','Lower','Upper')
+predit_tbl <- as.table.default(predit_tbl)
+ 
+
+predit_tbl %>%
+  kable(caption = 'Table 1: Extreme Weather Prediction Scenarios')
+```
