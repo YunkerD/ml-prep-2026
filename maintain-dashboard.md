@@ -1,5 +1,15 @@
 # 🛠️ ML Prep 2026 Dashboard Maintenance Log
 
+
+-----------
+## Reuseable update template block below ## 
+
+## 📅 YYYY-MM-DD — [Update Title]
+- **Change Summary:** [Brief description of what changed — e.g., added new dashboard, updated folder name, refined icon usage]
+- **Files Affected:** [List of files or folders — e.g., index.html, dashboard.html, weekly-roadmap.md]
+- **Rationale:** [Why the change was made — recruiter impact, academic alignment, visual polish, etc.]
+
+
 ## Overview
 This file tracks updates, rationale, and strategic decisions made to the ML Prep 2026 dashboard. It supports reproducibility, recruiter polish, and academic alignment.
 
